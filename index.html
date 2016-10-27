@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Swift is like Ruby</title>
+  <link rel="stylesheet" href="public/style.css">
+</head>
+<body>
+  <a target="_blank" href="https://github.com/swift-is-like-ruby/swift-is-like-ruby.github.io">
+    <img id="fork-me" src="public/fork-me.png">
+  </a>
+  <div id="note">
+    <b>Swift is like Ruby</b><br>
+    Shamefully forked from <a href="http://repo.tiye.me/swift-is-like-go/" target="_blank">Swift is like Go</a>
+  </div>
+  <div class="section">
+    <div class="title">BASICS</div>
+    <div class="case">
+      <div class="name">Hello World</div>
+      <div class="pair">
+        <div class="card">
+          <div class="lang">Swift</div>
+          <pre class="code code_swift">
+            <code>println("Hello, world!")</code>
+          </pre>
+        </div>
+        <div class="card">
+          <div class="lang">Ruby</div>
+          <pre class="code code_ruby">
+            <code>puts 'Hello, world!'</code>
+          </pre>
+        </div>
+      </div>
+    </div>
+    <div class="case">
+      <div class="name">Variables And Constants</div>
+      <div class="pair">
+        <div class="card">
+          <div class="lang">Swift</div>
+          <pre class="code code_swift">
+            <code>
+var myVariable = 42
+myVariable = 50
+let myConstant = 42
+            </code>
+          </pre>
+        </div>
+        <div class="card">
+          <div class="lang">Ruby</div>
+          <pre class="code code_ruby">
+            <code>
+my_variable = 42
+my_variable = 50
+MY_CONSTANT = 42
+            </code>
+          </pre>
+        </div>
+      </div>
+    </div>
+    <div class="case">
+      <div class="name">Explicit Types</div>
+        <div class="pair">
+          <div class="card">
+            <div class="lang">Swift</div>
+            <pre class="code code_swift">
+              <code>let explicitDouble: Double = 70</code>
+            </pre>
+          </div>
+          <div class="card">
+            <div class="lang">Ruby</div>
+            <pre class="code code_ruby">
+              <code>explicit_double = 70.0</code>
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div class="case">
+        <div class="name">Type Coercion</div>
+        <div class="pair">
+          <div class="card">
+            <div class="lang">Swift</div>
+            <pre class="code code_swift">
+              <code>
+let label = "The width is "
+let width = 94
+let widthLabel = label + String(width)
+              </code>
+            </pre>
+          </div>
+          <div class="card">
+            <div class="lang">Ruby</div>
+            <pre class="code code_ruby">
+              <code>
+label = "The width is "
+width = 94
+widthLabel = label + width.to_s
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div class="case">
+        <div class="name">String Interpolation</div>
+        <div class="pair">
+          <div class="card">
+            <div class="lang">Swift</div>
+            <pre class="code code_swift">
+              <code>
+let apples = 3
+let oranges = 5
+let fruitSummary = "I have \(apples + oranges) " +
+                   "pieces of fruit."
+              </code>
+            </pre>
+          </div>
+          <div class="card">
+            <div class="lang">Ruby</div>
+            <pre class="code code_ruby">
+              <code>
+apples = 3
+oranges = 5
+fruit_summary = "I have #{apples + oranges} " <<
+                   "pieces of fruit."
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div class="case">
+        <div class="name">Range Operator</div>
+        <div class="pair">
+          <div class="card">
+            <div class="lang">Swift</div>
+            <pre class="code code_swift">
+              <code>
+let names = ["Anna", "Alex", "Brian", "Jack"]
+let count = names.count
+for i in 0..count {
+    println("Person \(i + 1) is called \(names[i])")
+}
+// Person 1 is called Anna
+// Person 2 is called Alex
+// Person 3 is called Brian
+// Person 4 is called Jack
+              </code>
+            </pre>
+          </div>
+          <div class="card">
+            <div class="lang">Ruby</div>
+            <pre class="code code_ruby">
+              <code>
+names = %w(Anna Alex Brian Jack)
+count = names.size
+(0...count).each do |i|
+  puts "Person #{i + 1} is called #{names[i]}"
+end
+// Person 1 is called Anna
+// Person 2 is called Alex
+// Person 3 is called Brian
+// Person 4 is called Jack
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div class="case">
+        <div class="name">Inclusive Range Operator</div>
+        <div class="pair">
+          <div class="card">
+            <div class="lang">Swift</div>
+            <pre class="code code_swift">
+              <code>
+for index in 1...5 {
+    println("\(index) times 5 is \(index * 5)")
+}
+// 1 times 5 is 5
+// 2 times 5 is 10
+// 3 times 5 is 15
+// 4 times 5 is 20
+// 5 times 5 is 25
+              </code>
+            </pre>
+          </div>
+          <div class="card">
+            <div class="lang">Ruby</div>
+            <pre class="code code_ruby">
+              <code>
+(1..5).each do |index|
+  puts "#{index} times 5 is #{index * 5}"
+end
+// 1 times 5 is 5
+// 2 times 5 is 10
+// 3 times 5 is 15
+// 4 times 5 is 20
+// 5 times 5 is 25
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="title">BASICS</div>
+      <div class="case">
+        <div class="name">Arrays</div>
+        <div class="pair">
+          <div class="card">
+            <div class="lang">Swift</div>
+            <pre class="code code_swift">
+              <code>
+var shoppingList = ["catfish", "water",
+    "tulips", "blue paint"]
+shoppingList[1] = "bottle of water"
+              </code>
+            </pre>
+          </div>
+          <div class="card">
+            <div class="lang">Ruby</div>
+            <pre class="code code_ruby">
+              <code>
+shopping_list = ["catfish", "water",
+  "tulips", "blue paint"]
+shopping_list[1] = "bottle of water"
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div class="case">
+        <div class="name">Maps</div>
+        <div class="pair">
+          <div class="card">
+            <div class="lang">Swift</div>
+            <pre class="code code_swift">
+              <code>
+var occupations = [
+    "Malcolm": "Captain",
+    "Kaylee": "Mechanic",
+]
+occupations["Jayne"] = "Public Relations"
+              </code>
+            </pre>
+          </div>
+          <div class="card">
+            <div class="lang">Ruby</div>
+            <pre class="code code_ruby">
+              <code>
+occupations = {
+  "Malcolm" => "Captain",
+  "Kaylee" => "Mechanic"
+}
+occupations["Jayne"] = "Public Relations"
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div class="case">
+        <div class="name">Empty Collections</div>
+        <div class="pair">
+          <div class="card">
+            <div class="lang">Swift</div>
+            <pre class="code code_swift">
+              <code>
+let emptyArray = String[]
+let emptyDictionary = Dictionary&lt;String, Float&gt;()
+let emptyArrayNoType = []
+              </code>
+            </pre>
+          </div>
+          <div class="card">
+            <div class="lang">Ruby</div>
+            <pre class="code code_ruby">
+              <code>
+empty_array = []
+empty_map = {}
+empty_array_no_type = []
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="title">FUNCTIONS</div>
+      <div class="case">
+        <div class="name">Functions</div>
+        <div class="pair">
+          <div class="card">
+            <div class="lang">Swift</div>
+            <pre class="code code_swift">
+              <code>
+func greet(name: String, day: String) -&gt; String {
+    return "Hello \(name), today is \(day)."
+}
+greet("Bob", "Tuesday")
+              </code>
+            </pre>
+          </div>
+          <div class="card">
+            <div class="lang">Ruby</div>
+            <pre class="code code_ruby">
+              <code>
+def greet(name, day)
+  "Hello #{name}, today is #{day}."
+end
+greet("Bob", "Tuesday")
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div class="case">
+        <div class="name">Tuple Return</div>
+        <div class="pair">
+          <div class="card">
+            <div class="lang">Swift</div>
+            <pre class="code code_swift">
+              <code>
+func getGasPrices() -&gt; (Double, Double, Double) {
+    return (3.59, 3.69, 3.79)
+}
+              </code>
+            </pre>
+          </div>
+          <div class="card">
+            <div class="lang">Ruby</div>
+            <pre class="code code_ruby">
+              <code>
+def gas_prices(a, b, c)
+  [3.59, 3.69, 3.79]
+end
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div class="case">
+        <div class="name">Variable Number Of Arguments</div>
+        <div class="pair">
+          <div class="card">
+            <div class="lang">Swift</div>
+            <pre class="code code_swift">
+              <code>
+func sumOf(numbers: Int...) -&gt; Int {
+    var sum = 0
+    for number in numbers {
+        sum += number
+    }
+    return sum
+}
+sumOf(42, 597, 12)
+              </code>
+            </pre>
+          </div>
+          <div class="card">
+            <div class="lang">Ruby</div>
+            <pre class="code code_ruby">
+              <code>
+def sum_of(*numbers)
+  sum = 0
+  for number in numbers
+    sum += number
+  end
+  sum
+end
+sum_of(42, 597, 12)
+
+// the body of the function can be written just as:
+numbers.reduce &:+
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div class="case">
+        <div class="name">Function Type</div>
+        <div class="pair">
+          <div class="card">
+            <div class="lang">Swift</div>
+            <pre class="code code_swift">
+              <code>
+func makeIncrementer() -&gt; (Int -&gt; Int) {
+    func addOne(number: Int) -&gt; Int {
+        return 1 + number
+    }
+    return addOne
+}
+var increment = makeIncrementer()
+increment(7)
+              </code>
+            </pre>
+          </div>
+          <div class="card">
+            <div class="lang">Ruby</div>
+            <pre class="code code_ruby">
+              <code>
+def make_incrementer
+  def add_one number
+    1 + number
+  end
+end
+increment = make_incrementer
+increment(7)
+
+// makeIncrementer() can also be written in a shorter way:
+make_incrementer = lambda { |number| 1 + number }
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div class="case">
+        <div class="name">Map</div>
+        <div class="pair">
+          <div class="card">
+            <div class="lang">Swift</div>
+            <pre class="code code_swift">
+              <code>
+var numbers = [20, 19, 7, 12]
+numbers.map({ number in 3 * number })
+              </code>
+            </pre>
+          </div>
+          <div class="card">
+            <div class="lang">Ruby</div>
+            <pre class="code code_ruby">
+              <code>
+numbers = [20, 19, 7, 12]
+numbers.map { |number| 3 * number }
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div class="case">
+        <div class="name">Sort</div>
+        <div class="pair">
+          <div class="card">
+            <div class="lang">Swift</div>
+            <pre class="code code_swift">
+              <code>sort([1, 5, 3, 12, 2]) { $0 &gt; $1 }</code>
+            </pre>
+          </div>
+          <div class="card">
+            <div class="lang">Ruby</div>
+            <pre class="code code_ruby">
+              <code>[1, 5, 3, 12, 2].sort</code>
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div class="case">
+        <div class="name">Named Arguments</div>
+        <div class="pair">
+          <div class="card">
+            <div class="lang">Swift</div>
+            <pre class="code code_swift">
+              <code>
+def area(width: Int, height: Int)
+    return width * height
+}
+
+area(width: 10, height: 10)
+              </code>
+            </pre>
+          </div>
+          <div class="card">
+            <div class="lang">Ruby</div>
+            <pre class="code code_ruby">
+              <code>
+def area(width:, height:)
+  width * height
+end
+
+area(height: 10, width: 10)
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="title">CLASSES</div>
+      <div class="case">
+        <div class="name">Declaration</div>
+        <div class="pair">
+          <div class="card">
+            <div class="lang">Swift</div>
+            <pre class="code code_swift">
+              <code>
+class Shape {
+    var numberOfSides = 0
+    func simpleDescription() -&gt; String {
+        return "A shape with \(numberOfSides) sides."
+    }
+}
+              </code>
+            </pre>
+          </div>
+          <div class="card">
+            <div class="lang">Ruby</div>
+            <pre class="code code_ruby">
+              <code>
+class Shape
+  attr_writer :number_of_sides
+  def initialize
+    @number_of_sides = 0
+  end
+
+  def simple_description
+    "A shape with #{@number_of_sides} sides."
+  end
+end
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div class="case">
+        <div class="name">Usage</div>
+        <div class="pair">
+          <div class="card">
+            <div class="lang">Swift</div>
+            <pre class="code code_swift">
+              <code>
+var shape = Shape()
+shape.numberOfSides = 7
+var shapeDescription = shape.simpleDescription()
+              </code>
+            </pre>
+          </div>
+          <div class="card">
+            <div class="lang">Ruby</div>
+            <pre class="code code_ruby">
+              <code>
+shape = Shape.new
+shape.number_of_sides = 7
+shape_description = shape.simple_description
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div class="case">
+        <div class="name">Subclass</div>
+        <div class="pair">
+          <div class="card">
+            <div class="lang">Swift</div>
+            <pre class="code code_swift">
+              <code>
+class NamedShape {
+    var numberOfSides: Int = 0
+    var name: String
+
+    init(name: String) {
+        self.name = name
+    }
+
+    func simpleDescription() -&gt; String {
+        return "A shape with \(numberOfSides) sides."
+    }
+}
+
+class Square: NamedShape {
+    var sideLength: Double
+
+    init(sideLength: Double, name: String) {
+        self.sideLength = sideLength
+        super.init(name: name)
+        numberOfSides = 4
+    }
+
+    func area() -&gt; Double {
+        return sideLength * sideLength
+    }
+
+    override func simpleDescription() -&gt; String {
+        return "A square with sides of length \(sideLength)."
+    }
+}
+
+let test = Square(sideLength: 5.2)
+test.area()
+test.simpleDescription()
+              </code>
+            </pre>
+          </div>
+          <div class="card">
+            <div class="lang">Ruby</div>
+            <pre class="code code_ruby">
+              <code>
+class NamedShape
+  attr_writer :number_of_sides
+  def initialize(name)
+    @name = name
+    @number_of_sides = 0
+  end
+  def simpleDescription
+    "A shape with #{@number_of_sides} sides."
+  end
+end
+
+class Square < NamedShape
+  def initialize(side_length, name = '')
+    @side_length = side_length
+    @number_of_sides = 4
+    super name
+  end
+
+  def area
+    @side_length ** 2
+  end
+
+  def simple_description
+    "A square with sides of length #{@side_length}."
+  end
+end
+
+test = Square.new 5.2
+test.area
+test.simple_description
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div class="case">
+        <div class="name">Checking Type</div>
+        <div class="pair">
+          <div class="card">
+            <div class="lang">Swift</div>
+            <pre class="code code_swift">
+              <code>
+var movieCount = 0
+var songCount = 0
+
+for item in library {
+    if item is Movie {
+        ++movieCount
+    } else if item is Song {
+        ++songCount
+    }
+}
+              </code>
+            </pre>
+          </div>
+          <div class="card">
+            <div class="lang">Ruby</div>
+            <pre class="code code_ruby">
+              <code>
+movie_count = 0
+song_count = 0
+
+library.each do |item|
+  if item.is_a? Movie
+    movie_count += 1
+  elsif item.is_a? Song
+    song_count += 1
+  end
+end
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div class="case">
+        <div class="name">Extensions</div>
+        <div class="pair">
+          <div class="card">
+            <div class="lang">Swift</div>
+            <pre class="code code_swift">
+              <code>
+extension Double {
+    var km: Double { return self * 1_000.0 }
+    var m: Double { return self }
+    var cm: Double { return self / 100.0 }
+    var mm: Double { return self / 1_000.0 }
+    var ft: Double { return self / 3.28084 }
+}
+let oneInch = 25.4.mm
+println("One inch is \(oneInch) meters")
+// prints "One inch is 0.0254 meters"
+let threeFeet = 3.ft
+println("Three feet is \(threeFeet) meters")
+// prints "Three feet is 0.914399970739201 meters"
+              </code>
+            </pre>
+          </div>
+          <div class="card">
+            <div class="lang">Ruby</div>
+            <pre class="code code_ruby">
+              <code>
+class Float
+  def km
+    self * 1000
+  end
+  def m
+    self
+  end
+  def cm
+    self / 100
+  end
+  def mm
+    self / 1000
+  end
+  def ft
+    self / 3.28084
+  end
+end
+
+one_inch = 25.4.mm
+puts "One inch is #{one_inch} meters"
+# prints "One inch is 0.0254 meters"
+three_feet = 3.0.ft
+puts "Three feet is #{three_feet} meters"
+# prints "Three feet is 0.914399970739201 meters"
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
