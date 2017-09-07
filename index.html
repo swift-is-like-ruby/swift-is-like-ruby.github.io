@@ -21,7 +21,7 @@
         <div class="card">
           <div class="lang">Swift</div>
           <pre class="code code_swift">
-            <code>println("Hello, world!")</code>
+            <code>print("Hello, world!")</code>
           </pre>
         </div>
         <div class="card">
@@ -136,7 +136,7 @@ fruit_summary = "I have #{apples + oranges} " <<
 let names = ["Anna", "Alex", "Brian", "Jack"]
 let count = names.count
 for i in 0..count {
-    println("Person \(i + 1) is called \(names[i])")
+    print("Person \(i + 1) is called \(names[i])")
 }
 // Person 1 is called Anna
 // Person 2 is called Alex
@@ -171,7 +171,7 @@ end
             <pre class="code code_swift">
               <code>
 for index in 1...5 {
-    println("\(index) times 5 is \(index * 5)")
+    print("\(index) times 5 is \(index * 5)")
 }
 // 1 times 5 is 5
 // 2 times 5 is 10
@@ -677,10 +677,10 @@ extension Double {
     var ft: Double { return self / 3.28084 }
 }
 let oneInch = 25.4.mm
-println("One inch is \(oneInch) meters")
+("One inch is \(oneInch) meters")
 // prints "One inch is 0.0254 meters"
 let threeFeet = 3.ft
-println("Three feet is \(threeFeet) meters")
+print("Three feet is \(threeFeet) meters")
 // prints "Three feet is 0.914399970739201 meters"
               </code>
             </pre>
